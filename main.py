@@ -79,7 +79,7 @@ def converter_preco(valor_str):
         return None
 
 def filtrar_veiculos(vehicles, filtros, valormax=None):
-    campos_textuais = ["modelo"]
+    campos_textuais = ["modelo","titulo"]
     vehicles_filtrados = vehicles.copy()
 
     for chave, valor in filtros.items():
@@ -211,7 +211,7 @@ def get_data(request: Request):
 
     if alternativas:
         alternativa = [
-            {"modelo": v.get("modelo", ""), "ano": v.get("ano", ""), "preco": v.get("preco", "")}
+            {"modelo": v.get("modelo", ""), "preco": v.get("ano", ""), "preco": v.get("preco", "")}
             for v in alternativas
         ]
         return JSONResponse(content={
