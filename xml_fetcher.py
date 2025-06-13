@@ -119,6 +119,7 @@ def fetch_and_convert_xml():
                     "combustivel": v.get("combustivel"),
                     "cambio": v.get("cambio"),
                     "portas": v.get("numeroportas"),
+                    "tipoveiculo": v.get("tipoveiculo"),
                     "preco": converter_preco_xml(v.get("preco")),
                     "opcionais": v.get("opcionais").get("opcional") if v.get("opcionais") else None,
                     "fotos": [
