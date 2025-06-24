@@ -110,6 +110,7 @@ def fetch_and_convert_xml():
             try:
                 parsed = {
                     "id": v.get("idveiculo"),
+                    "tipo": v.get("tipoveiculo"),
                     "marca": v.get("marca"),
                     "modelo": v.get("modelo"),
                     "categoria": inferir_categoria(v.get("modelo")),
