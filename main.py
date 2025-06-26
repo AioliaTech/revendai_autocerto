@@ -198,16 +198,24 @@ def buscar_alternativas_cilindrada(vehicles, cilindrada_str):
         alternativas = [v for v in vehicles if v.get("cilindrada") and int(float(v.get("cilindrada"))) == next_down]
     return alternativas
 
-def sugerir_mais_proximo_acima(vehicles, valormax):
+def sugerir_mais_proximo_acima(vehicles, valormax, limite=5):
     try:
         teto = float(valormax)
     except Exception:
         return []
-    precos_acima = [converter_preco(v.get("preco")) for v in vehicles if converter_preco(v.get("preco")) and converter_preco(v.get("preco")) > teto]
+    precos_acima = sorted(set(
+        converter_preco(v.get("preco")) for v in vehicles
+        if converter_preco(v.get("preco")) and converter_preco(v.get("preco")) > teto
+    ))
     if not precos_acima:
         return []
-    mais_proximo = min(precos_acima)
-    return [v for v in vehicles if converter_preco(v.get("preco")) == mais_proximo]
+    resultados = []
+    for preco in precos_acima:
+        matches = [v for v in vehicles if converter_preco(v.get("preco")) == preco]
+        resultados.extend(matches)
+        if len(resultados) >= limite:
+            break
+    return resultados[:limite]
 
 @app.on_event("startup")
 def agendar_tarefas():
@@ -319,7 +327,7 @@ def get_data(request: Request):
                 }
             })
     if valormax:
-        sugestao_acima = sugerir_mais_proximo_acima(vehicles, valormax)
+        sugestao_acima = sugerir_mais_proximo_acima(vehicles, valormax, limite=5)
         if sugestao_acima:
             alternativas_formatadas = [
                 {"marca": v.get("marca", ""), "modelo": v.get("modelo", ""), "ano": v.get("ano", ""), "preco": v.get("preco", "")}
@@ -328,7 +336,7 @@ def get_data(request: Request):
             return JSONResponse(content={
                 "resultados": [],
                 "total_encontrado": 0,
-                "instrucao_ia": f"Não encontramos veículos dentro do valor desejado, mas segue a opção mais próxima logo acima do valor.",
+                "instrucao_ia": f"Não encontramos veículos dentro do valor desejado, mas seguem as opções mais próximas logo acima do valor.",
                 "alternativa": {
                     "resultados": alternativas_formatadas,
                     "total_encontrado": len(alternativas_formatadas)
