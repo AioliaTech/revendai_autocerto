@@ -257,11 +257,20 @@ def get_data(request: Request):
     query_params = dict(request.query_params)
     valormax = query_params.pop("ValorMax", None)
 
-    filtros_originais = {
-        "modelo": query_params.get("modelo"),
-        "marca": query_params.get("marca"),
-        "categoria": query_params.get("categoria")
-    }
+ filtros_originais = {
+    "id": query_params.get("id"),
+    "tipo": query_params.get("tipo"),
+    "modelo": query_params.get("modelo"),
+    "marca": query_params.get("marca"),
+    "cilindrada": query_params.get("cilindrada"),
+    "categoria": query_params.get("categoria"),
+    "motor": query_params.get("motor"),
+    "opcionais": query_params.get("opcionais"),
+    "cor": query_params.get("cor"),
+    "combustivel": query_params.get("combustivel"),
+    "ano": query_params.get("ano"),
+    "km": query_params.get("km")
+}
     filtros_ativos = {k: v for k, v in filtros_originais.items() if v}
 
     resultado = filtrar_veiculos(vehicles, filtros_ativos, valormax)
