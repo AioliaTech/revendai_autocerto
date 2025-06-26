@@ -257,7 +257,7 @@ def get_data(request: Request):
     query_params = dict(request.query_params)
     valormax = query_params.pop("ValorMax", None)
 
- filtros_originais = {
+filtros_originais = {
     "id": query_params.get("id"),
     "tipo": query_params.get("tipo"),
     "modelo": query_params.get("modelo"),
