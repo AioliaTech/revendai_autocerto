@@ -176,27 +176,28 @@ def buscar_alternativas_cilindrada(vehicles, cilindrada_str, limite=5):
         cilindrada_base = int(float(cilindrada_str))
     except Exception:
         return []
-    cilindradas_estoque = set()
+    cilindrada_veiculos = []
     for v in vehicles:
         c = v.get("cilindrada")
         if c is not None:
             try:
-                cilindradas_estoque.add(int(float(c)))
+                cilindrada_val = int(float(c))
+                cilindrada_veiculos.append((cilindrada_val, v))
             except Exception:
                 pass
-    cilindradas_ordenadas = sorted(cilindradas_estoque)
-    if not cilindradas_ordenadas:
+    if not cilindrada_veiculos:
         return []
-    acima = [c for c in cilindradas_ordenadas if c > cilindrada_base]
-    abaixo = [c for c in cilindradas_ordenadas if c < cilindrada_base]
-    alternativas = []
-    if acima:
-        next_up = min(acima)
-        alternativas = [v for v in vehicles if v.get("cilindrada") and int(float(v.get("cilindrada"))) == next_up]
-    if not alternativas and abaixo:
-        next_down = max(abaixo)
-        alternativas = [v for v in vehicles if v.get("cilindrada") and int(float(v.get("cilindrada"))) == next_down]
-    return alternativas[:limite]
+    cilindrada_veiculos.sort(key=lambda x: (abs(x[0] - cilindrada_base), x[0]))
+    proximos = []
+    usados = set()
+    for c_val, v in cilindrada_veiculos:
+        vid = v.get("id") or id(v)
+        if vid not in usados:
+            proximos.append(v)
+            usados.add(vid)
+        if len(proximos) >= limite:
+            break
+    return proximos
 
 def sugerir_mais_proximo_acima(vehicles, valormax, limite=5):
     try:
@@ -320,7 +321,7 @@ def get_data(request: Request):
             return JSONResponse(content={
                 "resultados": [],
                 "total_encontrado": 0,
-                "instrucao_ia": f"Não encontramos motos exatamente com {filtros_originais['cilindrada']}cc, mas seguem opções com cilindradas próximas.",
+                "instrucao_ia": f"Não encontramos motos exatamente com {filtros_originais['cilindrada']}cc, mas seguem opções com cilindradas mais próximas.",
                 "alternativa": {
                     "resultados": alternativas_formatadas,
                     "total_encontrado": len(alternativas_formatadas)
