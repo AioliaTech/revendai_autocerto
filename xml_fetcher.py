@@ -1,4 +1,4 @@
-import requests, xmltodict, json, os
+import requests, xmltodict, json, os, re
 from datetime import datetime
 from unidecode import unidecode
 
@@ -107,21 +107,30 @@ MAPEAMENTO_CILINDRADAS = {
     "dafra citycom 300": 300, "dr 160": 160, "dr 160 s": 160, "t350 x": 350
 }
 
+def normalizar_modelo(modelo):
+    if not modelo:
+        return ""
+    modelo_norm = unidecode(modelo).lower()
+    modelo_norm = re.sub(r'[^a-z0-9]', '', modelo_norm)  # remove tudo que não for letra ou número
+    return modelo_norm
+
 def inferir_categoria(modelo):
     if not modelo:
         return None
-    modelo_norm = unidecode(modelo).lower().replace("-", "").replace(" ", "").strip()
+    modelo_norm = normalizar_modelo(modelo)
     for mapeado, categoria in MAPEAMENTO_CATEGORIAS.items():
-        if mapeado in modelo_norm:
+        mapeado_norm = normalizar_modelo(mapeado)
+        if mapeado_norm in modelo_norm:
             return categoria
     return None
 
 def inferir_cilindrada(modelo):
     if not modelo:
         return None
-    modelo_norm = unidecode(modelo).lower().replace("-", "").replace(" ", "").strip()
+    modelo_norm = normalizar_modelo(modelo)
     for mapeado, cilindrada in MAPEAMENTO_CILINDRADAS.items():
-        if mapeado in modelo_norm:
+        mapeado_norm = normalizar_modelo(mapeado)
+        if mapeado_norm in modelo_norm:
             return cilindrada
     return None
 
@@ -152,7 +161,7 @@ def fetch_and_convert_xml():
                     "marca": v.get("marca"),
                     "modelo": v.get("modelo"),
                     "categoria": inferir_categoria(v.get("modelo")),
-                    "cilindrada": inferir_cilindrada(v.get("modelo")),   # <-- Novo campo
+                    "cilindrada": inferir_cilindrada(v.get("modelo")),
                     "ano": v.get("anomodelo"),
                     "km": v.get("quilometragem"),
                     "cor": v.get("cor"),
