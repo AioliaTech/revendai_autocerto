@@ -171,7 +171,7 @@ def filtrar_veiculos(vehicles, filtros, valormax=None):
         v.pop('_matched_word_count', None)
     return vehicles_processados
 
-def buscar_alternativas_cilindrada(vehicles, cilindrada_str):
+def buscar_alternativas_cilindrada(vehicles, cilindrada_str, limite=5):
     try:
         cilindrada_base = int(float(cilindrada_str))
     except Exception:
@@ -196,7 +196,7 @@ def buscar_alternativas_cilindrada(vehicles, cilindrada_str):
     if not alternativas and abaixo:
         next_down = max(abaixo)
         alternativas = [v for v in vehicles if v.get("cilindrada") and int(float(v.get("cilindrada"))) == next_down]
-    return alternativas
+    return alternativas[:limite]
 
 def sugerir_mais_proximo_acima(vehicles, valormax, limite=5):
     try:
@@ -301,7 +301,7 @@ def get_data(request: Request):
             }
         })
     if filtros_originais.get("cilindrada"):
-        alternativas_cilindrada = buscar_alternativas_cilindrada(vehicles, filtros_originais["cilindrada"])
+        alternativas_cilindrada = buscar_alternativas_cilindrada(vehicles, filtros_originais["cilindrada"], limite=5)
         if valormax:
             try:
                 teto = float(valormax)
@@ -315,7 +315,7 @@ def get_data(request: Request):
         if alternativas_cilindrada:
             alternativas_formatadas = [
                 {"marca": v.get("marca", ""), "modelo": v.get("modelo", ""), "ano": v.get("ano", ""), "preco": v.get("preco", ""), "cilindrada": v.get("cilindrada", "")}
-                for v in alternativas_cilindrada[:10]
+                for v in alternativas_cilindrada
             ]
             return JSONResponse(content={
                 "resultados": [],
