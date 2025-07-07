@@ -260,13 +260,13 @@ def get_data(request: Request):
     filtros_ativos = {k: v for k, v in filtros_originais.items() if v}
     resultado = filtrar_veiculos(vehicles, filtros_ativos, valormax)
 
-if simples == "1":
-    for v in resultado:
-        fotos = v.get("fotos")
-        if isinstance(fotos, list):
-            v["fotos"] = fotos[:1] if fotos else []
+    # PROCESSA FOTOS SE SIMPLES=1
+    if simples == "1":
+        for v in resultado:
+            fotos = v.get("fotos")
+            if isinstance(fotos, list):
+                v["fotos"] = fotos[:1] if fotos else []
 
-    
     if resultado:
         return JSONResponse(content={
             "resultados": resultado,
