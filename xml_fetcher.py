@@ -16,7 +16,7 @@ MAPEAMENTO_CATEGORIAS = {
     "corsa": "Hatch", "bravo": "Hatch", "punto": "Hatch", "208": "Hatch", "argo": "Hatch",
     "mobi": "Hatch", "c3": "Hatch", "picanto": "Hatch", "astra hatch": "Hatch", "stilo": "Hatch",
     "focus hatch": "Hatch", "206": "Hatch", "c4 vtr": "Hatch", "kwid": "Hatch", "soul": "Hatch",
-    "agile": "Hatch", "sonic hatch": "Hatch", "fusca": "Hatch",
+    "agile": "Hatch", "sonic hatch": "Hatch", "fusca": "Hatch", "a1": "hatch", "new beetle": "Hatch",
 
     # Sedan
     "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
@@ -26,7 +26,9 @@ MAPEAMENTO_CATEGORIAS = {
     "mazda6": "Sedan", "passat": "Sedan", "city sedan": "Sedan", "astra sedan": "Sedan", "vectra sedan": "Sedan",
     "classic": "Sedan", "cronos": "Sedan", "linea": "Sedan", "focus sedan": "Sedan", "ka sedan": "Sedan",
     "408": "Sedan", "c4 pallas": "Sedan", "polo sedan": "Sedan", "bora": "Sedan", "hb20s": "Sedan",
-    "lancer": "Sedan", "camry": "Sedan", "onix plus": "Sedan",
+    "lancer": "Sedan", "camry": "Sedan", "onix plus": "Sedan", "a3": "sedan", "a4": "sedan", "a5": "sedan",
+    "a6": "sedan", "a7": "sedan", "a8": "sedan", "rs3": "sedan", "rs5": "sedan", "rs7": "sedan", "e-tron gt": "sedan",
+    "malibu": "sedan",
 
     # SUV
     "duster": "SUV", "ecosport": "SUV", "hrv": "SUV", "compass": "SUV", "renegade": "SUV",
@@ -39,6 +41,7 @@ MAPEAMENTO_CATEGORIAS = {
     "bronco sport": "SUV", "2008": "SUV", "3008": "SUV", "c4 cactus": "SUV", "taos": "SUV",
     "cr-v": "SUV", "corolla cross": "SUV", "sw4": "SUV", "pajero sport": "SUV", "commander": "SUV",
     "xv": "SUV", "xc60": "SUV", "tiggo 5x": "SUV", "haval h6": "SUV", "nivus": "SUV",
+    "q2": "suv", "q3": "suv", "q4 e-tron": "suv", "q5": "suv", "q7": "suv", "q8": "suv", "e-tron": "suv",
 
     # Caminhonete
     "hilux": "Caminhonete", "ranger": "Caminhonete", "s10": "Caminhonete", "l200": "Caminhonete", "triton": "Caminhonete",
@@ -60,7 +63,7 @@ MAPEAMENTO_CATEGORIAS = {
     # Coupe
     "camaro": "Coupe", "mustang": "Coupe", "tt": "Coupe", "supra": "Coupe", "370z": "Coupe",
     "rx8": "Coupe", "challenger": "Coupe", "corvette": "Coupe", "veloster": "Coupe", "cerato koup": "Coupe",
-    "clk coupe": "Coupe", "a5 coupe": "Coupe", "gt86": "Coupe", "rcz": "Coupe", "brz": "Coupe",
+    "clk coupe": "Coupe", "a5 coupe": "Coupe", "gt86": "Coupe", "rcz": "Coupe", "brz": "Coupe", "tt": "coupe", "tts": "coupe", "r8": "coupe",
 
     # Conversível
     "z4": "Conversível", "boxster": "Conversível", "miata": "Conversível", "beetle cabriolet": "Conversível", "slk": "Conversível",
@@ -107,7 +110,9 @@ MAPEAMENTO_CILINDRADAS = {
     "road glide": 2150, "street glide": 1750, "next 300": 300, "commander 250": 250,
     "dafra citycom 300": 300, "dr 160": 160, "dr 160 s": 160, "cforce 1000": 1000,
     "trx 420": 420, "t350 x": 350, "xr300l tornado": 300, "fz25 fazer": 250, "fz15 fazer": 150,
-    "biz es": 125, "elite 125": 125, "crf 230f": 230, "cg150 fan": 150, "cg150 titan": 150
+    "biz es": 125, "elite 125": 125, "crf 230f": 230, "cg150 fan": 150, "cg150 titan": 150, "diavel 1260": 1260,
+    "cg150 titan": 150, "YZF R-6": 600, "MT-03": 300, "MT03": 300, "ER-6N": 650, "xt 600": 600, "biz 125": 125,
+    "cg 125": 125
 }
 
 # =================== UTILS =======================
