@@ -15,20 +15,20 @@ MAPEAMENTO_CATEGORIAS = {
     "fit": "Hatch", "city": "Hatch", "yaris": "Hatch", "etios": "Hatch", "clio": "Hatch",
     "corsa": "Hatch", "bravo": "Hatch", "punto": "Hatch", "208": "Hatch", "argo": "Hatch",
     "mobi": "Hatch", "c3": "Hatch", "picanto": "Hatch", "astra hatch": "Hatch", "stilo": "Hatch",
-    "focus hatch": "Hatch", "206": "Hatch", "c4 vtr": "Hatch", "kwid": "Hatch", "soul": "Hatch",
-    "agile": "Hatch", "sonic hatch": "Hatch", "fusca": "Hatch", "a1": "hatch", "new beetle": "Hatch",
+    "focus": "Hatch", "206": "Hatch", "c4": "Hatch", "kwid": "Hatch", "soul": "Hatch",
+    "agile": "Hatch", "sonic": "Hatch", "fusca": "Hatch", "a1": "hatch", "new beetle": "Hatch",
 
     # Sedan
     "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
     "prisma": "Sedan", "voyage": "Sedan", "siena": "Sedan", "grand siena": "Sedan", "cruze": "Sedan",
     "cobalt": "Sedan", "logan": "Sedan", "fluence": "Sedan", "cerato": "Sedan", "elantra": "Sedan",
     "virtus": "Sedan", "accord": "Sedan", "altima": "Sedan", "fusion": "Sedan", "mazda3": "Sedan",
-    "mazda6": "Sedan", "passat": "Sedan", "city sedan": "Sedan", "astra sedan": "Sedan", "vectra sedan": "Sedan",
+    "mazda6": "Sedan", "passat": "Sedan", "city sedan": "Sedan", "astra": "Sedan", "vectra sedan": "Sedan",
     "classic": "Sedan", "cronos": "Sedan", "linea": "Sedan", "focus sedan": "Sedan", "ka sedan": "Sedan",
     "408": "Sedan", "c4 pallas": "Sedan", "polo sedan": "Sedan", "bora": "Sedan", "hb20s": "Sedan",
     "lancer": "Sedan", "camry": "Sedan", "onix plus": "Sedan", "a3": "sedan", "a4": "sedan", "a5": "sedan",
     "a6": "sedan", "a7": "sedan", "a8": "sedan", "rs3": "sedan", "rs5": "sedan", "rs7": "sedan", "e-tron gt": "sedan",
-    "malibu": "sedan",
+    "malibu": "sedan", "marea": "sedan",
 
     # SUV
     "duster": "SUV", "ecosport": "SUV", "hrv": "SUV", "compass": "SUV", "renegade": "SUV",
