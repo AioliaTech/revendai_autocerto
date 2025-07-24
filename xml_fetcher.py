@@ -19,7 +19,7 @@ MAPEAMENTO_CATEGORIAS = {
     "agile": "Hatch", "sonic": "Hatch", "fusca": "Hatch", "a1": "hatch", "new beetle": "Hatch",
 
     # Sedan
-    "320i": "Sedan", "corolla cross": "SUV", "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
+    "cla 200": "Sedan", "320i": "Sedan", "corolla cross": "SUV", "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
     "prisma": "Sedan", "voyage": "Sedan", "siena": "Sedan", "grand siena": "Sedan", "cruze": "Sedan",
     "cobalt": "Sedan", "logan": "Sedan", "fluence": "Sedan", "cerato": "Sedan", "elantra": "Sedan",
     "virtus": "Sedan", "accord": "Sedan", "altima": "Sedan", "fusion": "Sedan", "mazda3": "Sedan",
