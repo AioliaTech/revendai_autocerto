@@ -19,7 +19,7 @@ MAPEAMENTO_CATEGORIAS = {
     "agile": "Hatch", "sonic": "Hatch", "fusca": "Hatch", "a1": "hatch", "new beetle": "Hatch",
 
     # Sedan
-    "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
+    "corolla cross": "SUV", "civic": "Sedan", "corolla": "Sedan", "sentra": "Sedan", "versa": "Sedan", "jetta": "Sedan",
     "prisma": "Sedan", "voyage": "Sedan", "siena": "Sedan", "grand siena": "Sedan", "cruze": "Sedan",
     "cobalt": "Sedan", "logan": "Sedan", "fluence": "Sedan", "cerato": "Sedan", "elantra": "Sedan",
     "virtus": "Sedan", "accord": "Sedan", "altima": "Sedan", "fusion": "Sedan", "mazda3": "Sedan",
@@ -39,7 +39,7 @@ MAPEAMENTO_CATEGORIAS = {
     "cherokee": "SUV", "grand cherokee": "SUV", "xtrail": "SUV", "murano": "SUV", "cx9": "SUV",
     "edge": "SUV", "trailblazer": "SUV", "pulse": "SUV", "fastback": "SUV", "territory": "SUV",
     "bronco sport": "SUV", "2008": "SUV", "3008": "SUV", "c4 cactus": "SUV", "taos": "SUV",
-    "cr-v": "SUV", "corolla cross": "SUV", "sw4": "SUV", "pajero sport": "SUV", "commander": "SUV",
+    "cr-v": "SUV", "sw4": "SUV", "pajero sport": "SUV", "commander": "SUV",
     "xv": "SUV", "xc60": "SUV", "tiggo 5x": "SUV", "haval h6": "SUV", "nivus": "SUV",
     "q2": "suv", "q3": "suv", "q4 e-tron": "suv", "q5": "suv", "q7": "suv", "q8": "suv", "e-tron": "suv",
 
